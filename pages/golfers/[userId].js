@@ -13,22 +13,25 @@ const GolferProfile = () => {
     <Layout>
       <>
         { error ?
-          <h2>{error}</h2>
-          : (
-            <div>
-              {userScores?.name && <h1>{userScores.name} scores</h1>}
-              {userScores?.scores?.map(score => (
-                <ScoreCard
-                  key={score.id}
-                  id={score.id}
-                  totalScore={score.total_score}
-                  playedAt={score.played_at}
-                  userId={score.user_id}
-                  userName={userScores.name}
-                />
-              ))}
-            </div>
-          )}
+          <>
+            <h2>{error.message}</h2>
+            <h3>{error.info.errors}</h3>
+          </>
+          :
+          <div>
+            {userScores?.name && <h1>{userScores.name} scores</h1>}
+            {userScores?.scores?.map(score => (
+              <ScoreCard
+                key={score.id}
+                id={score.id}
+                totalScore={score.total_score}
+                playedAt={score.played_at}
+                userId={score.user_id}
+                userName={userScores.name}
+              />
+            ))}
+          </div>
+        }
       </>
     </Layout>
   )
