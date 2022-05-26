@@ -5,6 +5,7 @@ import useScores from '../lib/useScores'
 
 const Home = () => {
   const { scores, error } = useScores()
+  console.log(scores)
 
   return (
     <Layout>
@@ -22,6 +23,7 @@ const Home = () => {
                 playedAt={score.played_at}
                 userId={score.user_id}
                 userName={score.user_name}
+                numberOfHoles={score.number_of_holes}
               />
             ))}
           </>
