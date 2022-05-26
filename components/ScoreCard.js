@@ -4,7 +4,7 @@ import { getUserId } from '../lib/userAuth'
 
 const CONFIRM_MESSAGE = 'Are you sure you want to delete the score?'
 
-const ScoreCard = ({ id, playedAt, totalScore, userId, userName, numberOfHoles}) => {
+const ScoreCard = ({ id, playedAt, totalScore, userId, userName, numberOfHoles }) => {
   const { deleteScore } = useScoreDelete(id)
 
   return (
